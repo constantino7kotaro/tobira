@@ -1,0 +1,26 @@
+<!-- 
+<header>
+  <div class="header-logo">
+    <a href="/">TOBIRA</a>
+  </div>
+  <ul class="header-menus">
+    <a href="/about">TOBIRAについて</a>
+　</ul>
+</header>
+-->
+
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">ユーザー一覧</h1>
+    <!-- 以下の<% %>を使ってeach文を追加してください -->
+    <% @users.each do |user|%>
+      <div class="users-index-item">
+        <div class="user-right">
+          <%= link_to(user.nickname, "/users/#{user.id}") %>
+          <%= user.introduction %>
+        </div>
+      </div>
+    <!-- 以下の<% %>を使ってeach文のendを追加してください -->
+    <% end %>
+  </div>
+</div> 
