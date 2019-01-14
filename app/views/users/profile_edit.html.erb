@@ -1,0 +1,38 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">プロフィールの設定</div>
+    <p>*は入力必須項目です。</p>
+    
+    <div class="form users-form">
+      <div class="form-body">
+          
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        
+        <%= form_tag("/users/#{@user.id}/update") do %>
+        <p>プロフィール画像</p>
+        #TODO:画像のアップロード 
+        
+        <p>名前（非公開)※ </p>
+        <input>
+        
+        <p>ニックネーム※</p>
+        <input name="nickname" value="<%= @user.name %>">
+        
+        <p>年齢 </p>
+        <input>
+        
+        <p>自己紹介</p>
+        <textarea name="introduction" value="<%= @user.introduction %>">
+        </textarea>
+        
+        <input type="submit" value="保存">
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

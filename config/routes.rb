@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  post "users/:id/update" => 'users#update'
+  get "users/:id/edit" => "users#profile_edit"
+  
   post "users/create" => "users#create"
   
   get "signup" => "users#new"

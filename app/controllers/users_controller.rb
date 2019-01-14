@@ -22,5 +22,21 @@ class UsersController < ApplicationController
       render("users/new")
     end 
   end
+  
+  def profile_edit
+    @user = User.find_by(id: params[:id])
+  end
 
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.nickname = params[:nickname]
+    @user.introduction = params[:introduction]
+    if @user.save
+      flash[:notice] = "プロフィールを編集しました"
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/profile_edit")
+    end
+  end
+  
 end
