@@ -1,7 +1,10 @@
 <div class="main user-show">
   <div class="container">
     <div class="user">
-    　#TODO: プロフィール画像を出力
+    　#NOTE: プロフィール画像を出力
+    　<div class="user-left">
+           <img src="<%= "/user_images/#{@user.image_name}" %>">
+      </div>
         
       <h2><%= @user.nickname %></h2>
       
