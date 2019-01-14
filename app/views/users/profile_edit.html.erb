@@ -12,9 +12,10 @@
           </div>
         <% end %>
         
-        <%= form_tag("/users/#{@user.id}/update") do %>
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
         <p>プロフィール画像</p>
-        #TODO:画像のアップロード 
+        #NOTE:画像のアップロード
+        <input name="image" type="file">
         
         <p>名前（非公開)※ </p>
         <input name="name" value="<%= @user.name %>">
