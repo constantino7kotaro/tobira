@@ -3,44 +3,19 @@ class UsersController < ApplicationController
     @users = User.all.order('updated_at DESC')
   end
 
-  def show
-    @user = User.find_by(id: params[:id])
-  end
-
-  def new
-    @user = User.new
-  end
-  
-  def create
-    @user = User.new(nickname: params[:nickname], 
-                     email: params[:email], 
-                     password: params[:password]
-                     # NOTE: 初期画像のファイルはまだ保存していない
-                      image_name: "default_user.jpg"
-                     )
-    if @user.save
-#TODO: 新規登録でデータが保存された後は、ログイン後のtopページであるホスト一覧画面（スライドのp.14)へリダイレクト 
-#NOTE: 現段階ではひとまずユーザ詳細ページへリダイレクト
-    redirect_to("/users/#{@user.id}")
-    flash[:notice] = "ユーザー登録が完了しました"
-    else
-      render("users/new")
-    end 
-  end
-  
-  def profile_edit
-    @user = User.find_by(id: params[:id])
+  def edit
+    @user = User.find(id: params[:id])
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find(id: params[:id])
     @user.nickname = params[:nickname]
     @user.introduction = params[:introduction]
     
     if params[:image]
-    @user.image_name = "#{@user.id}.jpg"
-    image = params[:image]
-    File.binwrite("public/user_images/#{@user.image_name}", image.read )
+      @user.image_name = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}", image.read )
     end
     
     if @user.save
