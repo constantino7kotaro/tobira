@@ -3,8 +3,7 @@ class UsersController < ApplicationController
     @users = User.all.order('updated_at DESC')
   end
 
-  def show
-    @user = User.find(id: params[:id])
+  def new
+    @user = User.new
   end
 end
-
