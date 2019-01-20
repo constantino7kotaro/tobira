@@ -4,17 +4,14 @@
     <!-- 以下の<% %>を使ってeach文を追加してください -->
     <% @users.each do |user|%>
       <div class="users-index-item">
-        
         <div class="user-left">
            <img src="<%= "/user_images/#{user.image_name}" %>">
         </div>
-        
         <div class="user-right">
           <%= link_to(user.nickname, "/users/#{user.id}") %>
           <%= user.introduction %>
         </div>
       </div>
-    <!-- 以下の<% %>を使ってeach文のendを追加してください -->
     <% end %>
   </div>
 </div>
