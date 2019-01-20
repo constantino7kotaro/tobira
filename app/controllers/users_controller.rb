@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(id: params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(id: params[:id])
+    @user = User.find(params[:id])
     @user.nickname = params[:nickname]
     @user.introduction = params[:introduction]
     

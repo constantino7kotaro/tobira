@@ -13,19 +13,15 @@
         
         <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
           <p>プロフィール画像</p>
-          #NOTE:画像のアップロード
+          <!-- 画像のアップロード -->
           <input name="image" type="file">
-        
           <p>名前（非公開)※ </p>
           <input name="name" value="<%= @user.name %>">
-        
           <p>ニックネーム※</p>
-          <input name="nickname" value="<%= @user.name %>">
-        
+          <input name="nickname" value="<%= @user.nickname %>">
           <p>年齢 </p>
           <input age="age" value="<%= @user.image_age %>">
-          #NOTE: カラム名を間違えてimage_age にしてしまった。
-        
+          <!-- カラム名を間違えてimage_age にしてしまった。 -->
           <p>自己紹介</p>
           <textarea name="introduction" value="<%= @user.introduction %>">
           </textarea>
