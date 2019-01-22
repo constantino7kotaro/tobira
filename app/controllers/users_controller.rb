@@ -8,17 +8,9 @@ class UsersController < ApplicationController
   end
   
   def create
-    p '================='
-    p params
-    p '=================='
-    # paramsの中のuserの中のnicknameを取得したい時
-    # params[:user][:nickname]
     @user = User.new(nickname: params[:user][:nickname], 
                     email: params[:user][:email], 
                     password: params[:user][:password])
-    p '================='
-    p @user
-    p '=================='
     if @user.save
     #TODO: 新規登録でデータが保存された後は、ログイン後のtopページであるホスト一覧画面（スライドのp.14)へリダイレクト 
     #NOTE: 現段階ではひとまずユーザ詳細ページへリダイレクト
