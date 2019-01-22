@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   put "users/:id" => 'users#update'
-  get "users/:id/edit" => "users#profile_edit"
+  get "users/:id/edit" => "users#edit"
   
   post "users/create" => "users#create"
   
