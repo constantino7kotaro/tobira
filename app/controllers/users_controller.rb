@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @users = User.all.order('updated_at DESC')
   end
 
+<<<<<<< HEAD
   def edit
     @user = User.find(params[:id])
   end
@@ -24,5 +25,9 @@ class UsersController < ApplicationController
     else
       render("users/profile_edit")
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 end
