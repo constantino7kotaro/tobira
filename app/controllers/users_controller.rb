@@ -25,5 +25,4 @@ class UsersController < ApplicationController
       render("users/profile_edit")
     end
   end
-  
 end
