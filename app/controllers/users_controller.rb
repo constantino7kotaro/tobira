@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @users = User.all.order('updated_at DESC')
   end
 
-<<<<<<< HEAD
   def edit
     @user = User.find(params[:id])
   end
