@@ -18,11 +18,9 @@ ActiveRecord::Schema.define(version: 2019_01_22_133132) do
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.string "email"
     t.string "password"
     t.string "age"
-    t.string "image_age"
   end
 
 end
