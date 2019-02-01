@@ -21,6 +21,36 @@ class UsersController < ApplicationController
     end 
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.nickname = params[:user][:nickname]
+    p "========="
+    p params
+    p "========="
+    @user.introduction = params[:introduction]
+    
+    if params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}", image.read )
+    end
+    
+    p "============="
+    p @user
+    p "============="
+    
+    if @user.save
+      flash[:notice] = "プロフィールを編集しました"
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/edit")
+    end
+  end
+  
   def show
     @user = User.find(params[:id])
   end
