@@ -30,20 +30,13 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.nickname = params[:user][:nickname]
-    p "========="
-    p params
-    p "========="
-    @user.introduction = params[:introduction]
+    @user.introduction = params[:user][:introduction]
     
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
       File.binwrite("public/user_images/#{@user.image_name}", image.read )
     end
-    
-    p "============="
-    p @user
-    p "============="
     
     if @user.save
       flash[:notice] = "プロフィールを編集しました"
