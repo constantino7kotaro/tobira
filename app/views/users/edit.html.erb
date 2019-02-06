@@ -11,6 +11,7 @@
           </div>
         <% end %>
         <%= form_for @user, url: { controller: :users, action: :update }, html: {method: 'PUT'} do |f| %>
+          <!-- TODO: 画像の表示 -->
           <%= f.label "プロフィール画像" %>
           <%= f.text_field :image %>
           <%= f.label "名前（非公開)※" %>
