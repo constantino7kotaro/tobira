@@ -1,0 +1,20 @@
+<div class="main lessons-index">
+  <div class="container">
+    <h1 class="lessons-heading">ホスト一覧</h1>
+    <% @lessons.each do |lesson| %>
+      <div class="lessons-index-item">
+        <!-- TODO:プロフィール画像表示 -->
+        
+        <div class="lesson-center">
+          <%= link_to(user.nickname, "/users/#{user.id}") %>
+          <%= lesson.skill_id %>
+          <%= lesson.area_id %>
+        </div>
+        
+        <div class="lesson-right" >
+          <%= lesson.content %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
