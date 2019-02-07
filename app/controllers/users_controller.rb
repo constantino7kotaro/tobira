@@ -29,8 +29,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.name = params[:user][:name]
     @user.nickname = params[:user][:nickname]
     @user.introduction = params[:user][:introduction]
+    @user.age = params[:user][:age]
     
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
