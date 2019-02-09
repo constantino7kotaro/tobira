@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_133132) do
+ActiveRecord::Schema.define(version: 2019_02_07_134429) do
+
+  create_table "areas", force: :cascade do |t|
+    t.integer "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lesson_types", force: :cascade do |t|
+    t.integer "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "skill_id"
+    t.integer "area_id"
+    t.integer "lesson_type_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "nickname"
@@ -21,6 +49,8 @@ ActiveRecord::Schema.define(version: 2019_01_22_133132) do
     t.string "email"
     t.string "password"
     t.string "age"
+    t.string "image_name"
+    t.string "name"
   end
 
 end

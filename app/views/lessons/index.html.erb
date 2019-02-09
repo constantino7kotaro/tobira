@@ -6,9 +6,9 @@
         <!-- TODO:プロフィール画像表示 -->
         
         <div class="lesson-center">
-          <%= link_to(user.nickname, "/users/#{user.id}") %>
-          <%= lesson.skill_id %>
-          <%= lesson.area_id %>
+          <div class="lesson-user-name">
+            <%= link_to(lesson.user.nickname, "/users/#{lesson.user.id}") %>
+          </div>
         </div>
         
         <div class="lesson-right" >
