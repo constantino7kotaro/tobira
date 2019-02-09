@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_134429) do
+ActiveRecord::Schema.define(version: 2019_02_09_133644) do
 
   create_table "areas", force: :cascade do |t|
-    t.integer "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "lesson_types", force: :cascade do |t|
-    t.integer "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 2019_02_07_134429) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_02_07_134429) do
     t.string "age"
     t.string "image_name"
     t.string "name"
+    t.string "image_age"
   end
 
 end

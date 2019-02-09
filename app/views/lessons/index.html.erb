@@ -7,7 +7,11 @@
         
         <div class="lesson-center">
           <div class="lesson-user-name">
+            <!-- TODO:リンク先をlessons_show(ホスト詳細画面）に変更する -->
             <%= link_to(lesson.user.nickname, "/users/#{lesson.user.id}") %>
+            <%= lesson.skill.name %>
+            <%= lesson.area.name %>
+            <%= lesson.lesson_type.name %>
           </div>
         </div>
         
