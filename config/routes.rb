@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  #NOTE: usersアクションのルーティング
   put  "users/:id" => 'users#update'
   post "users" => "users#create"
   get "signup" => "users#new"
@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/' => 'home#top'
   get 'about' => 'home#about'
   
+  #NOTE: lessonsアクションのルーティング
   get "lessons/index" => "lessons#index"
+  get 'lessons/:id' => 'lessons#show'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
