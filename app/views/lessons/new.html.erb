@@ -1,0 +1,30 @@
+<div class="main lessons-new">
+  <div class="container">
+    <div class="form-heading">ホストとして登録</div>
+    <p>※基本となるプロフィール設定の登録もお願いします。プロフィール設定はこちら </p>
+    <!-- TODO: こちらに下線＆カーソルでプロフィール設定ページへ user#edit -->
+    <div class="form lessons-form">
+      <div class="form-body">
+        <% @lesson.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        
+        <%= form_for @lesson do |f| %>
+         <%= f.label "エリア" %>
+         <%= f.text_field :area %>
+         <%= f.label "スキル" %>
+         <%= f.text_field :skill %>
+         <%= f.label "レッスン形式" %>
+         <%= f.text_field :lesson_type %>
+         <%= f.label "内容" %>
+         <p>（自己紹介とは別の、自分がどんなスキルを提供できるのか、どんなレッスンを考えているのかなど）</p>
+         <%= f.text_field :lesson_type %>
+         <%= f.submit "登録する" %>
+         <%= f.text_area :content %>
+        
+      </div>
+    </div>
+  </div>
+</div>

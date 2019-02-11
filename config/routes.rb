@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   #NOTE: lessonsアクションのルーティング
   get "lessons/index" => "lessons#index"
   get 'lessons/:id' => 'lessons#show'
+  get "lessons/signup" => "lessons#new"
+  post "lessons/create" => "lessons#create"
+  
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
