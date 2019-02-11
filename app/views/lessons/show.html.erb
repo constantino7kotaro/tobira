@@ -1,0 +1,17 @@
+<div class="main lesson-show">
+  <div class="container">
+    <h1 class="lessons-heading">ホスト詳細</h1>
+    <!-- TODO アンダーラインを入れてタイトルと詳細を上下に分ける -->
+    　<div class="lessons-show-item">
+      <!-- TODO プロフィール画像を出力 -->
+       <div class="lesson-center">
+        <%= @lesson.user.nickname %>
+        <%= @lesson.skill.name %>
+        <%= @lesson.area.name %>
+        <!-- TODO いいねカウントを出力 -->
+        <p><%= %></p>
+        <textarea><%= @lesson.content%></textarea>
+      </div>
+    </div>
+  </div>
+</div>
