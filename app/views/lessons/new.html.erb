@@ -12,17 +12,16 @@
         <% end %>
         
         <%= form_for @lesson do |f| %>
-         <%= f.label "エリア" %>
-         <%= f.text_field :area %>
-         <%= f.label "スキル" %>
-         <%= f.text_field :skill %>
-         <%= f.label "レッスン形式" %>
-         <%= f.text_field :lesson_type %>
-         <%= f.label "内容" %>
-         <p>（自己紹介とは別の、自分がどんなスキルを提供できるのか、どんなレッスンを考えているのかなど）</p>
-         <%= f.text_field :lesson_type %>
-         <%= f.submit "登録する" %>
-         <%= f.text_area :content %>
+          <%= f.label "エリア" %>
+          <%= f.text_field :area %>
+          <%= f.label "スキル" %>
+          <%= f.text_field :skill %>
+          <%= f.label "レッスン形式" %>
+          <%= f.text_field :lesson_type %>
+          <%= f.label "内容" %>
+          <p>（自己紹介とは別の、自分がどんなスキルを提供できるのか、どんなレッスンを考えているのかなど）</p>
+          <%= f.text_area :content %>
+          <%= f.submit "登録する" %>
         
       </div>
     </div>
