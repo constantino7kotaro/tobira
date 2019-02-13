@@ -10,7 +10,6 @@
             <%= message %>
           </div>
         <% end %>
-        
         <%= form_for @lesson do |f| %>
           <%= f.label "エリア" %>
           <%= f.text_field :area_id %>
@@ -25,7 +24,7 @@
           <p>（自己紹介とは別の、自分がどんなスキルを提供できるのか、どんなレッスンを考えているのかなど）</p>
           <%= f.text_area :content %>
           <%= f.submit "登録する" %>
-        
+        <% end %>
       </div>
     </div>
   </div>

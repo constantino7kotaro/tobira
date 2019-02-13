@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   
   #NOTE: lessonsアクションのルーティング
   get "lessons/index" => "lessons#index"
-  get 'lessons/:id' => 'lessons#show'
   get "lessons/new" => "lessons#new"
+  get 'lessons/:id' => 'lessons#show'
   post "lessons" => "lessons#create"
   
   
