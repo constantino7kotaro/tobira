@@ -6,9 +6,13 @@
         <!-- TODO:プロフィール画像表示 -->
         
         <div class="lesson-center">
-          <%= link_to(user.nickname, "/users/#{user.id}") %>
-          <%= lesson.skill_id %>
-          <%= lesson.area_id %>
+          <div class="lesson-user-name">
+            <!-- TODO:リンク先をlessons_show(ホスト詳細画面）に変更する -->
+            <%= link_to(lesson.user.nickname, "/users/#{lesson.user.id}") %>
+            <%= lesson.skill.name %>
+            <%= lesson.area.name %>
+            <%= lesson.lesson_type.name %>
+          </div>
         </div>
         
         <div class="lesson-right" >
