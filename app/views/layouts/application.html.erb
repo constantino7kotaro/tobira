@@ -12,7 +12,11 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("TweetApp", "/") %>
+        <% if @current_user %>
+          <%= link_to("TOBIRA", "/lessons/index") %>
+        <% else %>
+          <%= link_to("TOBIRA", "/") %>
+        <% end %>
       </div>
       
       <ul class="header-menus">
