@@ -15,12 +15,12 @@
         
         <%= form_for @user do |f| %>
           <%= f.label "ニックネーム※" %>
-          <%= f.text_field :nickname %>
+          <%= f.text_field :nickname, value: @user.nickname %>
           <%= f.label "メールアドレス※" %>
-          <%= f.text_field :email %> 
+          <%= f.text_field :email, value: @user.email %> 
           <%= f.label "パスワード※" %>
           <%= f.label "半角英数字８文字以上" %>
-          <%= f.text_field :password %> 
+          <%= f.password_field :password, value: @user.password %>
           <%= f.submit "登録する(無料)" %>
         <% end %>
       </div>
