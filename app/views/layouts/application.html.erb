@@ -19,9 +19,9 @@
         <!-- NOTE:現在ログイン中のユーザーを取得し、変数current_userに代入 -->
         <% current_user = User.find(session[:user_id]) %>
         
-        <% if current_user %>
+        <% if @current_user %>
           <li>
-            <%= link_to(current_user.nickname, "/users/#{current_user.id}") %>
+            <%= link_to(@current_user.nickname, "/users/#{@current_user.id}") %>
           </li>
           
           <!-- NOTE:ログインしている状態でヘッダーに表示するHTML -->
