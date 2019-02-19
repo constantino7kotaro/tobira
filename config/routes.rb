@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   #NOTE: usersアクションのルーティング
   get "login" => "users#login_form"
   post "login" => "users#login"  
+  post "logout" => "users#logout"  
   
   put "users/:id" => 'users#update'
   post "users" => "users#create"

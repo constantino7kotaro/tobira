@@ -21,16 +21,30 @@
             現在ログインしているユーザーのid:
             <%= session[:user_id] %>
           </li>
-        <% end %>
+          
+          <!-- NOTE:ログインしている状態でヘッダーに表示するHTML -->
+          <li>
+            <%= link_to("TOBIRAについて", "/about") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout", {method: :post}) %>
+          </li>
+          <li>
+            <%= link_to(@user.nickname, "/users/#{@user.id}") %>
+          </li>
+          
+          <!-- NOTE:ログインしていない状態でヘッダーに表示するHTML -->
+          <li>
+            <%= link_to("TOBIRAについて", "/about") %>
+          </li>
+          <li>
+            <%= link_to("ログイン", "/login") %>
+          </li>
+          <li>
+            <%= link_to("新規登録", "/signup") %>
+          </li>
         
-        <li>
-          <%= link_to("TOBIRAについて", "/about") %>
-        </li>
-        <li>
-          <%= link_to("ログイン", "/login") %>
-        <li>
-          <%= link_to("新規登録", "/signup") %>
-        </li>
+        <% end %>
       </ul>
     </header>
     
