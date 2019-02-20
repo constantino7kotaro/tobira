@@ -55,11 +55,12 @@ class UsersController < ApplicationController
   end
   
   def login_form
+    @user = User.find(params[:id])
   end
   
   def login
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    @user = User.find(params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
       redirect_to("/lessons/index")
