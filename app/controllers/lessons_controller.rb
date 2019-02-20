@@ -24,4 +24,9 @@ class LessonsController < ApplicationController
             render("lessons/new")
         end
     end
+    
+    def destroy
+        @lesson = Post.find(params[:id])
+        @lesson.destroy
+    end
 end

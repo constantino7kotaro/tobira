@@ -1,0 +1,11 @@
+<div class="lessons-destroy">
+  <p>ホスト登録を解除する</p>
+    <div class="destroy-header">
+      <h1>本当にホスト登録を解除してもいいですか？</h1>
+      <div class="destroy-menus">
+        <%= link_to("いいえ", "/lessons/index") %>
+        <!-- destroyアクションへのリンクを作成してください -->
+        <%= link_to("はい", "/lessons/#{@lesson.id}/destroy", {method:"post"}) %>
+      </div>
+    </div>
+ </div>
