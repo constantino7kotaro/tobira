@@ -55,7 +55,6 @@ class UsersController < ApplicationController
   end
   
   def login_form
-    @user = User.find(params[:id])
   end
   
   def login
