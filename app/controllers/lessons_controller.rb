@@ -1,4 +1,6 @@
 class LessonsController < ApplicationController
+    before_action :authenticate_user
+    
     def index
         @lessons = Lesson.all.order("updated_at DESC")
     end
@@ -26,7 +28,7 @@ class LessonsController < ApplicationController
     end
     
     def destroy
-        @lesson = Post.find(params[:id])
+        @lesson = Lesson.find(params[:id])
         @lesson.destroy
     end
 end
