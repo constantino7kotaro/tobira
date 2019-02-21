@@ -20,9 +20,6 @@
       </div>
       
       <ul class="header-menus">
-        <!-- NOTE:現在ログイン中のユーザーを取得し、変数current_userに代入 -->
-        <% current_user = User.find_by(id: session[:user_id]) %>
-        
         <% if @current_user %>
           <li>
             <%= link_to(@current_user.nickname, "/users/#{@current_user.id}") %>
@@ -35,10 +32,8 @@
           <li>
             <%= link_to("ログアウト", "/logout", {method: :post}) %>
           </li>
-          <li>
-            <%= link_to(@user.nickname, "/users/#{@user.id}") %>
-          </li>
-          
+         
+         <% else %>
           <!-- NOTE:ログインしていない状態でヘッダーに表示するHTML -->
           <li>
             <%= link_to("TOBIRAについて", "/about") %>

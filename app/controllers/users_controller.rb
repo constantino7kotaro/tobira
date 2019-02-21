@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
   
   def login
-    @user = User.find(params[:email])
+    @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
