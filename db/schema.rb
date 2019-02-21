@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_141950) do
+ActiveRecord::Schema.define(version: 2019_02_21_133311) do
 
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2019_02_18_141950) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "sent_user_id"
+    t.integer "recieved_user_id"
+    t.text "content"
+    t.integer "read_flag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "skills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,9 +56,9 @@ ActiveRecord::Schema.define(version: 2019_02_18_141950) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
-    t.string "password"
     t.string "age"
     t.string "name"
+    t.string "password_digest"
   end
 
 end
