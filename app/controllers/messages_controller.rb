@@ -1,4 +1,4 @@
-class MessageController < ApplicationController
+class MessagesController < ApplicationController
   def index
     @messages = [
       "今日からProgateでRailsの勉強するよー！",
