@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, {only:[:index, :show, :edit, :update]}
+  before_action :forbid_login_user, {only:[:new, :create, :login_form, :login]}
+  
   def index
     @users = User.all.order('updated_at DESC')
   end
@@ -14,9 +17,8 @@ class UsersController < ApplicationController
                     #TODO:初期画像が設定されるようにする
                     #image_name: "default_user.jpg"
     if @user.save
-      #TODO: 新規登録でデータが保存された後は、ログイン後のtopページであるホスト一覧画面（スライドのp.14)へリダイレクト
-      #NOTE: 現段階ではひとまずユーザ詳細ページへリダイレクト
-      redirect_to("/users/#{@user.id}")
+      session[:user_id] = @user.id
+      redirect_to("/lessons/index")
       flash[:notice] = "ユーザー登録が完了しました"
     else
       render("users/new")
@@ -50,5 +52,28 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+  end
+  
+  def login_form
+  end
+  
+  def login
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/lessons/index")
+    else
+      @error_message = "メールアドレスまたはパスワードが間違っています"
+      @email = params[:email]
+      @password = params[:password]
+      render("users/login_form")
+    end
+  end
+  
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/login")
   end
 end

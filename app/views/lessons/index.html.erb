@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="main lessons-index">
   <div class="container">
     <h1 class="lessons-heading">ホスト一覧</h1>

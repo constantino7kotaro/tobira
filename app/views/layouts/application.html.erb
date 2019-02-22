@@ -12,17 +12,40 @@
   <body>
     <header>
       <div class="header-logo">
-        <%= link_to("TweetApp", "/") %>
+        <% if @current_user %>
+          <%= link_to("TOBIRA", "/lessons/index") %>
+        <% else %>
+          <%= link_to("TOBIRA", "/") %>
+        <% end %>
       </div>
       
       <ul class="header-menus">
-        <li>
-          <%= link_to("TOBIRAについて", "/about") %>
-        </li>
-
-        <li>
-          <%= link_to("新規登録", "/signup") %>
-        </li>
+        <% if @current_user %>
+          <li>
+            <%= link_to(@current_user.nickname, "/users/#{@current_user.id}") %>
+          </li>
+          
+          <!-- NOTE:ログインしている状態でヘッダーに表示するHTML -->
+          <li>
+            <%= link_to("TOBIRAについて", "/about") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout", {method: :post}) %>
+          </li>
+         
+         <% else %>
+          <!-- NOTE:ログインしていない状態でヘッダーに表示するHTML -->
+          <li>
+            <%= link_to("TOBIRAについて", "/about") %>
+          </li>
+          <li>
+            <%= link_to("ログイン", "/login") %>
+          </li>
+          <li>
+            <%= link_to("新規登録", "/signup") %>
+          </li>
+        
+        <% end %>
       </ul>
     </header>
     

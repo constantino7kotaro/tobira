@@ -27,6 +27,9 @@ class LessonsController < ApplicationController
         end
     end
     
+    def destroy_form
+    end
+    
     def destroy
         @lesson = Lesson.find(params[:id])
         @lesson.destroy
