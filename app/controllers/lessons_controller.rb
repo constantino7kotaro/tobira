@@ -26,4 +26,29 @@ class LessonsController < ApplicationController
             render("lessons/new")
         end
     end
+    
+    def destroy_form
+    end
+    
+    def destroy
+        @lesson = Lesson.find(params[:id])
+        @lesson.destroy
+        redirect_to("/lessons/index")
+    end
+    
+    def search_area
+        #@areas = Area.all
+        @a = Area.search(params[:a])
+        @areas = @a.result(distinct: true)
+    end
+    
+    def search_skill
+        #@skills = Skill.all
+        @s = Skill.search(params[:s])
+        @skills = @s.result(distinct: true)
+    end
+    
+    #NOTE:キーワード検索は？？
+    def search_keyword
+    end
 end

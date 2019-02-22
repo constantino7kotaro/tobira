@@ -1,0 +1,20 @@
+<h1>条件検索</h1>
+
+<%= search_form_for @a do |f| %>
+  <%= f.label :name_start, "エリアを選択" %>
+  <%= f.search_field :name_start %>
+  <br />
+  
+<%= search_form_for @s do |f| %>
+  <%= f.label :name_start, "カテゴリを選択" %>
+  <%= f.search_field :name_start %>
+  <br />
+
+<%# 検索ボタン %>
+  <%= f.submit %>
+<% end %>
+
+<hr />
+
+<table>
+    
