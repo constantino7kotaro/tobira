@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2019_02_20_124237) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "sent_user_id"
+    t.integer "recieved_user_id"
+    t.text "content"
+    t.integer "read_flag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  
   create_table "skills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
