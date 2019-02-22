@@ -1,4 +1,6 @@
 class LessonsController < ApplicationController
+    before_action :authenticate_user
+    
     def index
         @lessons = Lesson.all.order("updated_at DESC")
     end
