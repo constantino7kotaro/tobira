@@ -27,15 +27,6 @@ class LessonsController < ApplicationController
         end
     end
     
-    def destroy_form
-    end
-    
-    def destroy
-        @lesson = Lesson.find(params[:id])
-        @lesson.destroy
-        redirect_to("/lessons/index")
-    end
-    
     def search_area
         #@areas = Area.all
         @a = Area.search(params[:a])
