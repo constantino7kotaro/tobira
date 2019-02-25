@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   post "lessons" => "lessons#create"
   get  "lessons/:id/destroy" => "lessons#destroy_form"
   post "lessons/:id/destroy" => "lessons#destroy"
+  get "lessons/search" => "lessons#search"
+  post "lessons/search" => "lessons#search"
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
