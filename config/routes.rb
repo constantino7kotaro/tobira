@@ -16,12 +16,12 @@ Rails.application.routes.draw do
   #NOTE: lessonsアクションのルーティング
   get "lessons/index" => "lessons#index"
   get "lessons/new" => "lessons#new"
+  get "lessons/search" => "lessons#search"
+  post "lessons/search" => "lessons#search"
   get 'lessons/:id' => 'lessons#show'
   post "lessons" => "lessons#create"
   get  "lessons/:id/destroy" => "lessons#destroy_form"
   post "lessons/:id/destroy" => "lessons#destroy"
-  get "lessons/search" => "lessons#search"
-  post "lessons/search" => "lessons#search"
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -28,20 +28,10 @@ class LessonsController < ApplicationController
         end
     end
     
-    def search_area
+    def search
         #@areas = Area.all
         @a = Area.search(params[:a])
         @areas = @a.result(distinct: true)
-    end
-    
-    def search_skill
-        #@skills = Skill.all
-        @s = Skill.search(params[:s])
-        @skills = @s.result(distinct: true)
-    end
-    
-    #NOTE:キーワード検索は？？
-    def search_keyword
     end
     
     def destroy_form
