@@ -29,9 +29,8 @@ class LessonsController < ApplicationController
     end
     
     def search
-        #@areas = Area.all
-        @a = Area.search(params[:a])
-        @areas = @a.result(distinct: true)
+        @search = Area.ransack(params[:q])
+        @areas = @search.result
     end
     
     def destroy_form

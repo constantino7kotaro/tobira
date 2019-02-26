@@ -1,10 +1,12 @@
 <h1>条件検索</h1>
 
-<%= search_form_for @a do |f| %>
-  <%= f.label :name_start, "エリアを選択" %>
-  <%= f.search_field :name_start %>
-  <br />
-
-  <%# 検索ボタン %>
-  <%= f.submit %>
+<%= search_form_for @search, url: '/lessons/search' do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= c.attribute_fields do |a| %>
+      <!-- TODO: 検索項目を Areaテーブルのnameカラムの値にしたい.今のままだとAreaテーブルの全てのカラム -->
+      <%= a.attribute_select association: [:areas] %>
+    <% end %>
+  <% end %>
+  <!-- NOTE: 検索ボタン押したあとの遷移画面が今のままだと同じ検索画面のまま？ -->
+  <div class="actions"><%= f.submit "検索" %></div>
 <% end %>
