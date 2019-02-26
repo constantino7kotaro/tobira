@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   #NOTE: messageアクションのルーティング
-  get 'messages/index'
+  get 'messages/index' => 'messages#index'
   
   #NOTE: usersアクションのルーティング
   put  "users/:id" => 'users#update'
