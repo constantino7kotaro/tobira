@@ -29,10 +29,4 @@ class LessonsController < ApplicationController
         @q = Lesson.ransack(params[:q])
         @lessons = @q.result(distinct: true)
     end
-
-    def search_form
-        @q = Lesson.search(search_params)
-        @lessons = @q.result(distinct: true)
-    end
-
 end
