@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get "lessons/index" => "lessons#index"
   get "lessons/new" => "lessons#new"
   get "lessons/search" => "lessons#search"
-  post "lessons/search" => "lessons#search"
   get 'lessons/:id' => 'lessons#show'
   post "lessons" => "lessons#create"
   get  "lessons/:id/destroy" => "lessons#destroy_form"
