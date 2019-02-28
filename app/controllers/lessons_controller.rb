@@ -45,4 +45,9 @@ class LessonsController < ApplicationController
             redirect_to("/lessons/index")
         end
     end
+    
+    def search
+        @q = Lesson.ransack(params[:q])
+        @lessons = @q.result(distinct: true)
+    end
 end
